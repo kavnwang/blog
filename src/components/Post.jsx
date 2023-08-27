@@ -16,7 +16,7 @@ const {postId} = useParams();
 
 useEffect(() => {
     try {
-        const postURL = `http://localhost:3000/posts/${postId}`;
+        const postURL = `https://blog-api-lac-alpha.vercel.app/posts/${postId}`;
         axios
             .get(postURL)
             .then((res) => {

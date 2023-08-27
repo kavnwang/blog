@@ -16,7 +16,7 @@ const PostLink =  ({postId}) => {
                 .get(postURL)
                 .then((res) => {
                     setPost(res.data.post);
-                    console.log(res.data.post.tags);
+                    console.log(res.data.post);
                 });
         } catch (error) {
             

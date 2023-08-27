@@ -13,7 +13,7 @@ const AllTags = () => {
         
         try {
             axios 
-                .get("http://localhost:3000/tags/view")
+                .get("https://blog-api-lac-alpha.vercel.app/tags/view")
                 .then((res) => {
                     setTags(res.data.tags)
                     console.log(res.data.tags);

@@ -10,7 +10,7 @@ function Comments(props) {
         
         try {
             axios 
-                .get(`http://localhost:3000/posts/${props.postId}/comments`)
+                .get(`https://blog-api-lac-alpha.vercel.app/posts/${props.postId}/comments`)
                 .then((res) => {
                     setComments(res.data.comments.comments);
                 })

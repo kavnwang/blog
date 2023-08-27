@@ -9,7 +9,7 @@ function PublishPostButton(props) {
     const onClick = async(data, e) => {
         try {
             axios 
-                .post(`http://localhost:3000/posts/update/${props.postId}`,{publish: !props.published})
+                .post(`https://blog-api-lac-alpha.vercel.app/posts/update/${props.postId}`,{publish: !props.published})
                 .then(
                     (res) => {console.log(res)},
                     props.handleState(!props.published),

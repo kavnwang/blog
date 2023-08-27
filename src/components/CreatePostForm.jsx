@@ -16,7 +16,7 @@ const CreatePostForm = () => {
 
     useEffect(() => {
         try {
-            const postURL = `http://localhost:3000/posts/create`;
+            const postURL = `https://blog-api-lac-alpha.vercel.app/posts/create`;
             axios
                 .post(postURL,{title: "", author: "", subtitle:"", text: "", tags: []})
                 .then((res) => {

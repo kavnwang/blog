@@ -1,6 +1,7 @@
 import React from 'react'
 import { useForm } from "react-hook-form";
 import axios from "axios";
+import styles from '../styles/CreateCommentForm.module.css';
 
 
 function CreateCommentForm(props) {
@@ -10,7 +11,7 @@ function CreateCommentForm(props) {
     const onSubmit = async(data, e) => {
         try {
             axios 
-                .post(`http://localhost:3000/posts/${props.post._id}/comments/create`, {author: data.author, comment: data.comment, postId: props.post._id})
+                .post(`https://blog-api-lac-alpha.vercel.app/posts/${props.post._id}/comments/create`, {author: data.author, comment: data.comment, postId: props.post._id})
                 .then((res) => {console.log(res)});
         } catch (error) {
             
@@ -18,16 +19,16 @@ function CreateCommentForm(props) {
     }
 
     return(
-        <div>
+        <div className={styles.divWrapper}>
             <h2>Create Comment</h2>
-            <form onSubmit={handleSubmit(onSubmit)}>
+            <form className={styles.formWrapper} onSubmit={handleSubmit(onSubmit)}>
             <label htmlFor='author'>Author</label>
             <input {...register("author")} />
             <label htmlFor='comment'>Comment</label>
 
-            <input {...register("comment")} />
+            <textarea className={styles.commentInput} {...register("comment")} />
 
-            <input type="submit" />
+            <input className={styles.submitButton} type="submit" />
         </form>
         </div>
         

@@ -9,7 +9,7 @@ const CreateTagForm = () => {
     const onSubmit = async(data, e) => {
         try {
             axios 
-                .post("http://localhost:3000/tags/create", {name: data.name})
+                .post("https://blog-api-lac-alpha.vercel.app/tags/create", {name: data.name})
                 .then((res) => {console.log(res)});
         } catch (error) {
             

@@ -20,15 +20,15 @@ function AddTag({postId}) {
 
         try {
             axios 
-                .post(`http://localhost:3000/posts/update/${postId}`, {tags: newTags})
+                .post(`${process.env.API_URL}/posts/update/${postId}`, {tags: newTags})
                 .then((res) => {setTagObjects(res.data.post.tags)})
                 .then(setTags(newTags))
                 .then(
                     axios
-                        .get(`http://localhost:3000/tags/name/${data.name}`)
+                        .get(`https://blog-api-lac-alpha.vercel.app/tags/name/${data.name}`)
                         .then((res) => {
                             console.log(res.data);
-                            axios.post(`http://localhost:3000/tags/${res.data.tags._id}/add/${postId}`);
+                            axios.post(`https://blog-api-lac-alpha.vercel.app/tags/${res.data.tags._id}/add/${postId}`);
                         })
                 )
         } catch (error) {
@@ -40,14 +40,14 @@ function AddTag({postId}) {
         try {
             let getTags = [];
             let getTagObjects = [];
-            const postURL = `http://localhost:3000/posts/${postId}`;
+            const postURL = `https://blog-api-lac-alpha.vercel.app/posts/${postId}`;
             axios
                 .get(postURL)
                 .then((res) => {
                     res.data.post.tags.forEach((tag, index) => {
                         if(tag != null) {
 
-                        axios.get(`http://localhost:3000/tags/${tag}`)
+                        axios.get(`https://blog-api-lac-alpha.vercel.app/tags/${tag}`)
                         .then((res) => {
                             getTags.push(res.data.tag.name);
                             getTagObjects.push(res.data.tag);

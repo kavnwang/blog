@@ -10,7 +10,7 @@ function DeletePostButton(props) {
         try {
             console.log(props.postId);
             axios 
-                .post(`http://localhost:3000/posts/delete/${props.postId}`)
+                .post(`https://blog-api-lac-alpha.vercel.app/posts/delete/${props.postId}`)
                 .then((res) => {console.log(res)});
 
         } catch (error) {

@@ -11,7 +11,7 @@ const PublishedPosts = () => {
         
         try {
             axios 
-                .get("http://localhost:3000/posts/publish")
+                .get("https://blog-api-lac-alpha.vercel.app/posts/publish")
                 .then((res) => {
                     setPosts(res.data.posts)
         });

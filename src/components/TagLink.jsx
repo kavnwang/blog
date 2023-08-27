@@ -9,7 +9,7 @@ function TagLink({tagId}) {
 
     useEffect(() => {
         try {
-            const tagURL = `http://localhost:3000/tags/${tagId}`;
+            const tagURL = `https://blog-api-lac-alpha.vercel.app/tags/${tagId}`;
             axios
                 .get(tagURL)
                 .then((res) => {

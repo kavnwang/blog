@@ -11,7 +11,7 @@ const UnpublishedPosts = () => {
         
         try {
             axios 
-                .get("http://localhost:3000/posts/unpublish")
+                .get("https://blog-api-lac-alpha.vercel.app/posts/unpublish")
                 .then((res) => {
                     setPosts(res.data.posts)
         });
