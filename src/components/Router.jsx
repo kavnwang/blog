@@ -2,7 +2,6 @@ import React from 'react'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from './App.jsx'
 import Dashboard from './Dashboard.jsx'
-import RecentPosts from './RecentPosts.jsx'
 import Post from './Post.jsx';
 import EditPostLink from './EditPostLink.jsx';
 import Tag from './Tag.jsx';
