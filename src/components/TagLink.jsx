@@ -9,7 +9,7 @@ function TagLink({tagId}) {
 
     useEffect(() => {
         try {
-            const tagURL = `https://blog-api-lac-alpha.vercel.app/tags/${tagId}`;
+            const tagURL = `${import.meta.env.VITE_API_URL}/tags/${tagId}`;
             axios
                 .get(tagURL)
                 .then((res) => {

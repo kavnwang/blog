@@ -16,7 +16,7 @@ const CreatePostForm = () => {
 
     useEffect(() => {
         try {
-            const postURL = `https://blog-api-lac-alpha.vercel.app/posts/create`;
+            const postURL = `${import.meta.env.VITE_API_URL}/posts/create`;
             axios
                 .post(postURL,{title: "", author: "", subtitle:"", text: "", tags: []})
                 .then((res) => {

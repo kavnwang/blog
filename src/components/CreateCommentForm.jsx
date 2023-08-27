@@ -4,14 +4,14 @@ import axios from "axios";
 import styles from '../styles/CreateCommentForm.module.css';
 
 
-function CreateCommentForm(props) {
+function CreateCommentForm({postId}) {
 
     const { register, handleSubmit } = useForm();
 
     const onSubmit = async(data, e) => {
         try {
             axios 
-                .post(`https://blog-api-lac-alpha.vercel.app/posts/${props.post._id}/comments/create`, {author: data.author, comment: data.comment, postId: props.post._id})
+                .post(`${import.meta.env.VITE_API_URL}/posts/${postId}/comments/create`, {author: data.author, comment: data.comment, postId: postId})
                 .then((res) => {console.log(res)});
         } catch (error) {
             

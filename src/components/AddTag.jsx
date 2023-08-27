@@ -20,15 +20,15 @@ function AddTag({postId}) {
 
         try {
             axios 
-                .post(`${process.env.API_URL}/posts/update/${postId}`, {tags: newTags})
+                .post(`${import.meta.env.VITE_API_URL}/posts/update/${postId}`, {tags: newTags})
                 .then((res) => {setTagObjects(res.data.post.tags)})
                 .then(setTags(newTags))
                 .then(
                     axios
-                        .get(`https://blog-api-lac-alpha.vercel.app/tags/name/${data.name}`)
+                        .get(`${import.meta.env.VITE_API_URL}/tags/name/${data.name}`)
                         .then((res) => {
                             console.log(res.data);
-                            axios.post(`https://blog-api-lac-alpha.vercel.app/tags/${res.data.tags._id}/add/${postId}`);
+                            axios.post(`${import.meta.env.VITE_API_URL}/tags/${res.data.tags._id}/add/${postId}`);
                         })
                 )
         } catch (error) {
@@ -40,14 +40,14 @@ function AddTag({postId}) {
         try {
             let getTags = [];
             let getTagObjects = [];
-            const postURL = `https://blog-api-lac-alpha.vercel.app/posts/${postId}`;
+            const postURL = `${VITE_API_URL}/posts/${postId}`;
             axios
                 .get(postURL)
                 .then((res) => {
                     res.data.post.tags.forEach((tag, index) => {
                         if(tag != null) {
 
-                        axios.get(`https://blog-api-lac-alpha.vercel.app/tags/${tag}`)
+                        axios.get(`${VITE_API_URL}/tags/${tag}`)
                         .then((res) => {
                             getTags.push(res.data.tag.name);
                             getTagObjects.push(res.data.tag);

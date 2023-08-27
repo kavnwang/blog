@@ -11,7 +11,7 @@ const PostLink =  ({postId}) => {
 
     useEffect(() => {
         try {
-            const postURL = `http://localhost:3000/posts/${postId}`;
+            const postURL = `${import.meta.env.VITE_API_URL}/posts/${postId}`;
             axios
                 .get(postURL)
                 .then((res) => {

@@ -10,6 +10,7 @@ import SubscribeForm from './SubscribeForm';
 import RecentPosts from './RecentPosts';
 
 function App() {
+
   return (
     <div>
       <Nav />

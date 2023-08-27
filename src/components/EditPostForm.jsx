@@ -17,7 +17,7 @@ const  EditPostForm = ({postId}) => {
 
     useEffect(() => {
         try {
-            const postURL = `https://blog-api-lac-alpha.vercel.app/posts/${postId}`;
+            const postURL = `${import.meta.env.VITE_API_URL}/posts/${postId}`;
             axios
                 .get(postURL)
                 .then((res) => {
@@ -32,7 +32,7 @@ const  EditPostForm = ({postId}) => {
       }, []);
 
     useEffect(() => {
-        const postURL = `https://blog-api-lac-alpha.vercel.app/posts/update/${postId}`;
+        const postURL = `${import.meta.env.VITE_API_URL}/posts/update/${postId}`;
             const watchFields = watch((data, {}) =>
             axios
             .post(postURL, data)
@@ -47,7 +47,7 @@ const  EditPostForm = ({postId}) => {
     const onSubmit = async(data, e) => {
         try {
             axios 
-                .post(`https://blog-api-lac-alpha.vercel.app/posts/update/${postId}`, {publish: !post.publish})
+                .post(`${import.meta.env.VITE_API_URL}/posts/update/${postId}`, {publish: !post.publish})
                 .then((res) => {console.log(res)});
         } catch (error) {
             

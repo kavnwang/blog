@@ -2,11 +2,8 @@ import React from 'react'
 import { useEffect, useState} from 'react';
 import {Link, useParams } from 'react-router-dom';
 import axios from 'axios';
-import CreateCommentForm from './CreateCommentForm';
-import AllComments from './AllComments';
-import EditPostForm from './EditPostForm';
-import DeletePostButton from './DeletePostButton';
-import PublishPostButton from './PublishButton';
+import CreateCommentForm from './CreateCommentForm.jsx';
+import AllComments from './AllComments.jsx';
 import Nav from './Nav'
 const Post = () => {
 
@@ -16,7 +13,7 @@ const {postId} = useParams();
 
 useEffect(() => {
     try {
-        const postURL = `https://blog-api-lac-alpha.vercel.app/posts/${postId}`;
+        const postURL = `${import.meta.env.VITE_API_URL}/posts/${postId}`;
         axios
             .get(postURL)
             .then((res) => {
@@ -35,7 +32,6 @@ useEffect(() => {
             <h1>{post.title}</h1>
             <h4>{post.subtitle}</h4>
             <p>{post.text}</p>
-            <CreateCommentForm post={post}/>
             <AllComments postId={postId} />
         </div>
         }

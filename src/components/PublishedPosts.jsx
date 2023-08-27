@@ -11,7 +11,7 @@ const PublishedPosts = () => {
         
         try {
             axios 
-                .get("https://blog-api-lac-alpha.vercel.app/posts/publish")
+                .get(`${import.meta.env.VITE_API_URL}/posts/publish`)
                 .then((res) => {
                     setPosts(res.data.posts)
         });

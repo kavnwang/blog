@@ -11,7 +11,7 @@ const UnpublishedPosts = () => {
         
         try {
             axios 
-                .get("https://blog-api-lac-alpha.vercel.app/posts/unpublish")
+                .get(`${import.meta.env.VITE_API_URL}/posts/unpublish`)
                 .then((res) => {
                     setPosts(res.data.posts)
         });
