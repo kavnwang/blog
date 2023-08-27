@@ -41,11 +41,6 @@ function Router() {
           path:"/posts/:postId/edit",
           element: <EditPostLink />
         },
-        
-        {
-          path: "/posts/recent",
-          element: <RecentPosts/>
-        },
         {
           path: "/posts/create",
           element: <CreatePostForm />
