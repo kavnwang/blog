@@ -7,7 +7,7 @@ import AllComments from './AllComments';
 import EditPostForm from './EditPostForm';
 import DeletePostButton from './DeletePostButton';
 import PublishPostButton from './PublishButton';
-
+import Nav from './Nav'
 const Post = () => {
 
 const [publish, setPublish] = useState(false);
@@ -31,13 +31,12 @@ useEffect(() => {
     function displayPost() {
         if(post) {
             return <div>
+            <Nav />
             <h1>{post.title}</h1>
+            <h4>{post.subtitle}</h4>
             <p>{post.text}</p>
-            <Link to={`/posts/${postId}/edit`}> Edit Post</Link>
             <CreateCommentForm post={post}/>
             <AllComments postId={postId} />
-            <DeletePostButton postId={postId}/>
-            <PublishPostButton postId={postId} published={publish} handleState={setPublish}/>
         </div>
         }
         else {

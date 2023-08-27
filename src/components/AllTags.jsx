@@ -2,6 +2,7 @@ import React from 'react'
 import axios from "axios";
 import { useEffect, useState} from 'react';
 import TagLink from './TagLink';
+import styles from '../styles/AllTags.module.css';
 
 
 const AllTags = () => {
@@ -15,6 +16,7 @@ const AllTags = () => {
                 .get("http://localhost:3000/tags/view")
                 .then((res) => {
                     setTags(res.data.tags)
+                    console.log(res.data.tags);
         });
         } catch (error) {
             
@@ -28,7 +30,7 @@ const AllTags = () => {
     return(
         <div>
             <h2>All Tags</h2>
-              {tags && tags.map(tag => <TagLink key={tag._id} tag={tag}  />)} 
+              <div className={styles.tagWrapper}>{tags && tags.map(tag => <TagLink key={tag._id} tagId={tag._id}  />)} </div>
               
         </div>
 

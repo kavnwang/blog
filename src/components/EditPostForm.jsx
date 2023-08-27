@@ -1,22 +1,19 @@
 import React from 'react'
-import { useForm , useFieldArray} from "react-hook-form";
+import { useForm} from "react-hook-form";
 import axios from "axios";
-import {useEffect, useState} from 'react';
+import {useEffect, useState, useRef, } from 'react';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import AddTag from './AddTag';
 import styles from '../styles/CreatePostForm.module.css'
+
 
 const  EditPostForm = ({postId}) => {
     const [post, setPost] = useState(null);
 
     const { register, watch, getValues, useWatch, control, handleSubmit, formState: { isDirty, dirtyFields }, setValue } = useForm();
 
-    const vals = getValues();
-    const { fields, append, update } = useFieldArray({
-        control,
-        name: "tags"
-    });
+    const vals = getValues(["title","author","subtitle","text"]);
 
     useEffect(() => {
         try {
@@ -24,27 +21,28 @@ const  EditPostForm = ({postId}) => {
             axios
                 .get(postURL)
                 .then((res) => {
-                    setPost(res.data.post)
-                });
+                    setPost(res.data.post),
+                    console.log(res.data.post);
+                }
+                );
         } catch (error) {
             
         }
-    
-      }, [])
+        
+      }, []);
 
     useEffect(() => {
         const postURL = `http://localhost:3000/posts/update/${postId}`;
-            const watchFields = watch((data, { title, author, subtitle, text }) =>
-        axios
+            const watchFields = watch((data, {}) =>
+            axios
             .post(postURL, data)
             .then((res) => {
-                console.log(data);
-                setPost(data);
+                console.log(res.data.post);
+                setPost(res.data.post);
             }));
             return () => watchFields.unsubscribe()
         }
-  , [vals])
-
+  , [vals]);
 
     const onSubmit = async(data, e) => {
         try {
@@ -59,27 +57,13 @@ const  EditPostForm = ({postId}) => {
 function displayForm() {
     if(post) {
         return <div className={styles.divWrapper} >
+            <AddTag postId={postId} />
             <form className={styles.formWrapper} onSubmit={handleSubmit(onSubmit)}>
+            <input className={styles.submitButton} type="submit" />
             <input defaultValue={post.title} placeholder="Enter title..." className={styles.postTitle} {...register("title")} />
             <input defaultValue={post.author} placeholder="Enter author..."  className={styles.postAuthor} {...register("author")} />
             <input defaultValue={post.subtitle} placeholder="Enter subtitle..." className={styles.subTitle} {...register("subtitle")} />            
-            <ul className={styles.tagWrapper}>
-                {
-                    fields.map((field,index) => (   
-                            <AddTag key={field.id}
-                            control={control}
-                            update={update}
-                            index={index}
-                            value={field}
-                             />
-                    )
-                    )
-                }
-            </ul>
-            
-            <button className={styles.addTag} type="button" onClick={() => append({name: ""})}>+</button>
             <input defaultValue={post.text} placeholder={loremIpsum} className={styles.postText} {...register("text")} />
-            <input className={styles.submitButton} type="submit" />
         </form>
         </div>
     } else {

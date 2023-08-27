@@ -3,14 +3,26 @@ import axios from "axios";
 import { useEffect, useState} from 'react';
 import Tag from './Tag';
 import { Link } from "react-router-dom";
+import styles from '../styles/TagLink.module.css'
+function TagLink({tagId}) {
+    const [tag, setTag] = useState(null);
 
-function TagLink(props) {
+    useEffect(() => {
+        try {
+            const tagURL = `http://localhost:3000/tags/${tagId}`;
+            axios
+                .get(tagURL)
+                .then((res) => {
+                    setTag(res.data.tag)
+                });
+        } catch (error) {
+            
+        }
+      }, [])
 
     return(
         <div>
-             <Link to={"/tags/" + props.tag._id}>
-                {props.tag.name} with {props.tag.color}
-             </Link>
+            <Link className={styles.tag} to={`/tags/${tagId}`}>{tag && tag.name}</Link>
         </div>
 
     );

@@ -9,7 +9,7 @@ const CreateTagForm = () => {
     const onSubmit = async(data, e) => {
         try {
             axios 
-                .post("http://localhost:3000/tags/create", {name: data.name, color: data.color})
+                .post("http://localhost:3000/tags/create", {name: data.name})
                 .then((res) => {console.log(res)});
         } catch (error) {
             
@@ -22,8 +22,6 @@ const CreateTagForm = () => {
         <form onSubmit={handleSubmit(onSubmit)}>
             <label htmlFor='name'>name</label>
             <input {...register("name")} />
-            <label htmlFor='color'>color</label>
-            <input {...register("color")} />
 
             <input type="submit" />
         </form>

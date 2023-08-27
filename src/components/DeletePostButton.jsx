@@ -12,7 +12,6 @@ function DeletePostButton(props) {
             axios 
                 .post(`http://localhost:3000/posts/delete/${props.postId}`)
                 .then((res) => {console.log(res)});
-                window.location.href = `http://localhost:5173/dash`;
 
         } catch (error) {
             

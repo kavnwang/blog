@@ -2,6 +2,8 @@ import React from 'react'
 import { useEffect, useState} from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import PostLink from './PostLink';
+import Nav from './Nav';
 
 const Tag = () => {
 
@@ -14,7 +16,6 @@ useEffect(() => {
         axios
             .get(tagURL)
             .then((res) => {
-                console.log(res)
                 setTag(res.data.tag)
             });
     } catch (error) {
@@ -22,11 +23,21 @@ useEffect(() => {
     }
   }, [])
 
+    function display() {
+        if(tag) {
+            const posts = [];
+            tag.posts.forEach((post) => {
+                posts.push(<PostLink key={post} postId={post} />)
+            });
+            return posts;
+        } 
+        return <div></div>
+    }
 
     return(
         <div>
-            <h1>{tag && tag.name}</h1>
-            <p>{tag && tag.color}</p>
+            <Nav />
+            {display()}
         </div>
     );
 }

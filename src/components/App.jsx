@@ -1,12 +1,28 @@
 import { useState } from 'react'
-import '../styles/App.css'
-import Header from './Header'
+import styles from '../styles/App.module.css'
+import Nav from './Nav';
+import RecentPostDisplay from './RecentPostDisplay';
+import Hero from './Hero';
+import MonthDisplay from './MonthDisplay';
+import Footer from './Footer';
+import Current from './Current';
+import SubscribeForm from './SubscribeForm';
+import RecentPosts from './RecentPosts';
+
 function App() {
   return (
     <div>
-      <Header />
+      <Nav />
+      <Hero />
+<div className={styles.recentWrapper}>
+<RecentPostDisplay className={styles.recentPost} />
+<Current className={styles.current} />
+</div>
+<RecentPosts num={3} />
+<SubscribeForm />
+<Footer />
     </div>
   )
 }
 
-export default App
+export default App;
