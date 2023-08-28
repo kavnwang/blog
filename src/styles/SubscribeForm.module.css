@@ -1,0 +1,29 @@
+.formWrapper {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputForm {
+    height:2.5rem;
+}
+
+.submitButton {
+    height:2.5rem;
+    width:7.5rem;
+    font-size:0.8rem;
+    font-weight:900;
+    border-radius:0.75rem;
+    text-align:center;
+    border:none;
+    background-color:var(--subscribe-btn-bg-color);
+    color:var(--subscribe-btn-text-color);
+
+}
+
+.formContent {
+    display:flex;
+    justify-content: center;
+    gap:3rem;
+}

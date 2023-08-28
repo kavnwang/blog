@@ -1,0 +1,70 @@
+
+body {
+    font-family:'Montserrat','Roboto', sans-serif;
+    background-color:var(--body-bg-color);
+    margin:0;
+  }
+  
+  .nav {
+    color:var(--nav-text-color);
+    top: 0px;
+    width:100%;
+    display:flex;
+    background-color: var(--header-bg-color);
+    justify-content: space-between;
+    padding:0.3rem 0;
+    align-items: center;
+    z-index: 1;
+    margin:0;
+    height:3rem;
+  }
+  
+  .navTitle {
+    font-size:1rem;
+    margin:0;
+  }
+  .navRight{
+    color:var(--nav-text-color);
+    display:flex;
+    margin:0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 0.7rem;
+  vertical-align: baseline;
+    list-style-type:none;
+    display:flex;
+    justify-content: right;
+    gap:3.5rem;
+    padding: 0 2rem;
+    align-items: center;
+  }
+  
+  .nav:visited {
+    color:var(--nav-text-color);
+  }
+  .navLink a{
+    color:var(--nav-text-color);
+    text-decoration: none;
+  }
+  .navImage {
+    height:2.25rem;
+    margin-right:0.75rem;
+    width:auto;
+  }
+  
+  .nav-btn {
+    background-color: transparent;
+    border-radius:50%;
+    border:none;
+    padding:0;
+    margin:0;
+  }
+  .nav-light-dark-img {
+    border-radius: 50%;
+    width:1rem;
+    height:auto;
+    background-color: transparent;
+    padding:0;
+    margin:0;
+  }

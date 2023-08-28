@@ -1,0 +1,21 @@
+.headerWrapper {
+    display:flex;
+    gap: 50px;
+    margin:0;
+}
+
+.commentAuthor {
+    font-weight:900;
+}
+
+.commentDate {
+    font-style: italic;
+}
+
+.commentText {
+    margin-top:0;
+}
+
+.commentWrapper {
+    border-bottom: solid 1px black;
+}

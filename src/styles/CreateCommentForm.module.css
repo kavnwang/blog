@@ -1,0 +1,27 @@
+.formWrapper {
+    display: flex;
+    flex-direction: column;
+    gap:0.5rem;
+}
+
+.divWrapper {
+    margin-top:7rem;
+}
+.commentInput {
+    height:5rem;
+}
+
+.formInput {
+    background-color: transparent;
+    border:none;
+}
+
+.submitButton {
+    width:5rem;
+    background-color: var(--subscribe-btn-bg-color);
+    border:none;
+    height:2rem;
+    font-size:0.75rem;
+    font-weight:800;
+    border-radius: 0.5rem;
+}

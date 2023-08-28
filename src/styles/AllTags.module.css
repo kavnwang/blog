@@ -1,0 +1,6 @@
+.tagWrapper {
+    display:flex;
+    font-size:1.25rem;
+    text-align: center;
+    gap:2rem;
+}

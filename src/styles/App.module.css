@@ -1,0 +1,200 @@
+.recentWrapper {
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.contact-icon {
+  width:1.5rem;
+  height:1.5rem;
+}
+
+.footer {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
+  gap:1rem;
+  padding: 2.5rem 0;
+}
+.contact-bar {
+  display:flex;
+  flex-direction: row;
+  gap:2.5rem;
+}
+.copy-text {
+  font-size:0.8rem;
+  color:var(--footer-text-color);
+  margin:0;
+}
+
+.posts {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  gap:2rem;
+  color: var(--post-text-color);
+  text-overflow:ellipsis;
+}
+
+.posts-title {
+  color:white;
+  margin: 2rem 0;
+  margin-top:3rem;
+}
+
+.latest-post {
+  display:flex;
+  color:var(--latest-post-text-color);
+  justify-content: space-around;
+  background-color:#c2ffff;
+  margin: 0 10%;
+  box-shadow: 0.6rem 0.6rem 0.15rem 0.15rem #1b6464;
+  padding:3rem;
+  padding-bottom:2rem;
+}
+
+.latest-text {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  font-size:0.75rem;
+  width:50%;
+}
+
+.latest-title {
+  margin:0px;
+  font-size:1.5rem;
+  margin-bottom:0.75rem;
+}
+.latest-left {
+  width:30%;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap:0.3rem;
+}
+
+.latest-post-date {
+  font-size:0.75rem;
+}
+.latest-img {
+  width:100%;
+  height:auto;
+  object-fit:contain;
+}
+
+.latest-desc {
+  width:100%;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin:0;
+}
+.tags-bar {
+  
+  display:flex;
+  flex-direction: row;
+  align-items: left;
+  justify-content: center;
+  margin:0rem 0;
+  gap:1rem;
+  flex-wrap:wrap;
+  height:2em;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.tag {
+  display:inline-block;
+  color: var(--tag-text-color);
+  background-color: var(--tag-bg-color);
+  border-radius:0.25em;
+  padding:0.25em max(0.25em,0.2rem);
+  font-weight:500;
+  text-overflow: ellipsis;
+  margin:0;
+}
+
+.tag:hover {
+  font-weight:900;
+  color:var(--tag-text-color-hover);
+}
+
+.scrapbook-btn {
+  background-color: transparent;
+  border-radius: 10px;
+  color:var(--posts-btn-text-color);
+  padding:0.5em 1em;
+  border-style:none;
+}
+.scrapbook-btn:hover {
+  border: 1px solid #fff;
+  padding-bottom:calc(0.5em-1px); 
+  padding-top:calc(0.5em-1px);
+
+}
+
+.scrapbook-btn-text {
+  font-size:1rem;
+  display:inline;
+}
+
+.other-posts {
+  margin:0 10%;
+  margin-right:40%;
+  padding-bottom:1.5rem;
+}
+.post {
+  display:flex;
+  flex-direction: column;
+  background-color:var(--post-bg-color);
+  border-bottom: 1.2px solid var(--post-divider-color);
+  margin:1rem 0;
+  padding:0.5rem 0;
+}
+
+.post-title-container {
+  margin:0.5rem 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap:1rem;
+}
+.post-title {
+  margin:0px;
+}
+.post-desc {
+  width:100%;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size:0.6rem;
+  margin:0;
+}
+
+.post-date {
+  margin:0;
+  padding:0;
+  flex: 0 0 auto;
+  font-size:0.75rem;
+  height:1rem;
+  padding-right:0.5rem;
+  border-right: 1px solid var(--post-divider-color);
+}
+
+.post-title-container .tags-bar {
+  justify-content: left;
+  align-items: center;
+  padding:0;
+  margin:0;
+  flex:1 1 0;
+  font-size:0.5rem;
+}

@@ -1,0 +1,9 @@
+.tag {
+    text-decoration: none;
+    display: inline;
+    font-size:inherit;
+}
+
+.tag:hover {
+    font-weight: 900;
+}

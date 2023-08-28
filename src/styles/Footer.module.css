@@ -1,0 +1,23 @@
+.contact-icon {
+    width:1.5rem;
+    height:1.5rem;
+}
+
+.footer {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    gap:1rem;
+    padding: 2.5rem 0;
+}
+.contact-bar {
+    display:flex;
+    flex-direction: row;
+    gap:2.5rem;
+}
+.copyText {
+    font-size:0.8rem;
+    color:var(--footer-text-color);
+    margin:0;
+}
