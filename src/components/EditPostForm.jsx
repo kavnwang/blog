@@ -1,7 +1,7 @@
 import React from 'react'
 import { useForm} from "react-hook-form";
 import axios from "axios";
-import {useEffect, useState, useRef, } from 'react';
+import {useEffect, useState} from 'react';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import AddTag from './AddTag';
@@ -11,7 +11,7 @@ import styles from '../styles/CreatePostForm.module.css'
 const  EditPostForm = ({postId}) => {
     const [post, setPost] = useState(null);
 
-    const { register, watch, getValues, useWatch, control, handleSubmit, formState: { isDirty, dirtyFields }, setValue } = useForm();
+    const { register, watch, getValues, useWatch, control, handleSubmit } = useForm();
 
     const vals = getValues(["title","author","subtitle","text"]);
 

@@ -1,12 +1,11 @@
-import { useForm , useFieldArray} from "react-hook-form";
+import { useForm} from "react-hook-form";
 import {useState, useEffect} from 'react';
 import axios from "axios";
 import TagLink from "./TagLink";
-import Tag from "./Tag";
 
 function AddTag({postId}) {
 
-    const { register, watch, getValues, useWatch, control, handleSubmit, formState: { isDirty, dirtyFields }, setValue } = useForm();
+    const { register, handleSubmit} = useForm();
 
     const [tags, setTags] = useState([]);
     const [tagObjects, setTagObjects] = useState([]);
@@ -44,7 +43,7 @@ function AddTag({postId}) {
             axios
                 .get(postURL)
                 .then((res) => {
-                    res.data.post.tags.forEach((tag, index) => {
+                    res.data.post.tags.forEach((tag) => {
                         if(tag != null) {
 
                         axios.get(`${VITE_API_URL}/tags/${tag}`)
@@ -66,7 +65,7 @@ function AddTag({postId}) {
 
     return(
         <div>
-           {tagObjects.map((tag) => <TagLink tag={tag} />)}
+           {tagObjects.map((tag) => <TagLink key={tag} tag={tag} />)}
             <form onSubmit={handleSubmit(onSubmit)}>
             <input {...register('name')} placeholder='Tag Name' />
             <input type="submit" />

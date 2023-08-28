@@ -1,8 +1,5 @@
 import React from 'react'
-import { useForm } from "react-hook-form";
 import axios from "axios";
-import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
 
 function DeletePostButton(props) {
 

@@ -4,7 +4,6 @@ import { useEffect, useState} from 'react';
 import TagLink from './TagLink';
 import styles from '../styles/AllTags.module.css';
 
-
 const AllTags = () => {
 
     const [tags, setTags] = useState(null);

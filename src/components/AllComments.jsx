@@ -2,7 +2,6 @@ import React from 'react'
 import axios from "axios";
 import { useEffect, useState} from 'react';
 import Comment from './Comment';
-import CreateCommentForm from './CreateCommentForm';
 import styles from '../styles/CreateCommentForm.module.css';
 import { useForm } from "react-hook-form";
 

@@ -1,9 +1,7 @@
-import { useState } from 'react'
 import styles from '../styles/App.module.css'
 import Nav from './Nav';
 import RecentPostDisplay from './RecentPostDisplay';
 import Hero from './Hero';
-import MonthDisplay from './MonthDisplay';
 import Footer from './Footer';
 import Current from './Current';
 import SubscribeForm from './SubscribeForm';
