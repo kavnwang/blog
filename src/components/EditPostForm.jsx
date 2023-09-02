@@ -63,7 +63,7 @@ function displayForm() {
             <input defaultValue={post.title} placeholder="Enter title..." className={styles.postTitle} {...register("title")} />
             <input defaultValue={post.author} placeholder="Enter author..."  className={styles.postAuthor} {...register("author")} />
             <input defaultValue={post.subtitle} placeholder="Enter subtitle..." className={styles.subTitle} {...register("subtitle")} />            
-            <input defaultValue={post.text} placeholder={loremIpsum} className={styles.postText} {...register("text")} />
+            <textarea defaultValue={post.text} placeholder={loremIpsum} className={styles.postText} {...register("text")} />
         </form>
         </div>
     } else {
