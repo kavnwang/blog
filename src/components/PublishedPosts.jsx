@@ -18,9 +18,6 @@ const PublishedPosts = () => {
         } catch (error) {
             
         }
-        return () => {
-            clearInterval();
-        }
       
       },[])
 

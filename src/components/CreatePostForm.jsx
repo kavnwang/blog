@@ -13,7 +13,10 @@ const CreatePostForm = () => {
         try {
             const postURL = `${import.meta.env.VITE_API_URL}/posts/create`;
             axios
-                .post(postURL,{title: "", author: "", subtitle:"", text: "", tags: []})
+                .post(postURL,{title: "", author: "", subtitle:"", text:     {
+                    nodeType: 'document',
+                    content: [],
+                }, tags: []})
                 .then((res) => {
                     setPost(res.data.post);
                 });

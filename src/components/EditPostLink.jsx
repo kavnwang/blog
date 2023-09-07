@@ -5,7 +5,6 @@ import {useEffect, useState} from 'react';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import AddTag from './AddTag';
-import styles from '../styles/CreatePostForm.module.css'
 import { useParams } from 'react-router-dom';
 import EditPostForm from './EditPostForm';
 

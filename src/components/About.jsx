@@ -18,12 +18,14 @@ const About = () => {
                 <li>Problems with comments: bad UI and auto-refresh</li>
                 <li>Login / auth</li>
                 <li>Being able to edit comments as owner of blog</li>
-                <li>Deleting tags </li>
+                <li>Deleting/editing tags </li>
                 <li>Text redndering</li>
                 <li>Clean up project file organization</li>
                 <li>Better mobile experience</li>
                 <li>Fix routers (way to go "back" on nav, etc)</li>
+                <li>Add table of contents to posts </li>
                 <li>Create an actual about me page</li>
+
             </ul>
             </div>
         </div>
