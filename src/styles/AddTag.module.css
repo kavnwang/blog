@@ -1,0 +1,65 @@
+.addTag {
+    border-radius:50%;
+    border:none;
+    background-color:none;
+}
+
+.displayWrapper {
+    display: inline;
+}
+
+.append {
+    border-radius:0.25rem;
+    display:inline;
+    padding:0.5rem;
+    background-color: white;
+    border:none;
+    width:2rem;
+    height:2rem;
+    border: 2px solid black;
+    font-weight: 900;
+
+}
+
+.submitTags  {
+    border-radius: 0.25rem;
+    width:6rem;
+    height:2rem;
+    background-color: white;
+    border:2px solid black;
+    font-weight: 900;
+}
+button {
+    display:inline;
+    padding:0.5rem;
+    margin:0.5rem;
+    margin-left:0;
+    background-color: white;
+    border:none;
+    width:4.25rem;
+    font-weight: 900;
+}
+
+.formWrapper {
+    display:flex;
+    gap:1rem;
+    flex-wrap: wrap;
+    padding: 3rem 0;
+}
+.section {
+    padding:1rem;
+    border:none;
+    background-color: var(--new-tag-bg-color);
+    border-radius: 0.5rem;
+}
+
+.edit, .editSection {
+    display:inline;
+}
+
+.tagTextArea {
+    height:1rem;
+    width:8.5rem;
+    display:block;
+    border: 2px solid black;
+}

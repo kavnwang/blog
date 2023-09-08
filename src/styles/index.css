@@ -16,27 +16,28 @@
   -webkit-text-size-adjust: 100%;
   font-size: 16px;
   padding:1rem 20%;
-}
+} 
 
 :root {
-  --header-bg-color: #fff3f3;
-  --hero-text-color: #a85a00;
-  --body-bg-color:#fff1fb;
+  --header-bg-color: #f8f8f8;
+  --hero-text-color: #000000;
+  --body-bg-color:#f8f8f8;
   --nav-text-color:#000e2c;
-  --footer-text-color:#330000;
+  --footer-text-color:#000000;
   --latest-post-text-color:#000000;
   --posts-btn-text-color:rgb(255, 169, 183);
   --tag-text-color: #ff3bff;
   --tag-text-color-hover:#ff00ff;
-  --tag-bg-color:#ffcbff;
+  --tag-bg-color:#ffcbff; 
   --post-text-color:#bfdbff;
-  --post-divider-color: hsl(300, 100%, 90%,80%);
-  --subscribe-btn-text-color:#491500;
-  --subscribe-btn-bg-color:#ff7a63;
-  --post-title-color:#680049;
+  --post-divider-color: hsl(226, 100%, 90%);
+  --subscribe-btn-text-color:#000000;
+  --subscribe-btn-bg-color:#47f3ff;
+  --post-title-color:rgb(0, 0, 0);
   --nav-font-size:1rem;
   --subscribe-section-size:1rem;
   --hero-section-size:1rem;
+  --new-tag-bg-color:rgb(255, 227, 227);
 }
 
 
@@ -53,7 +54,6 @@
     --hero-section-size: 3.2vw;
   }
 }
-
 
 body {
   margin: 0;

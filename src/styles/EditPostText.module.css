@@ -1,7 +1,7 @@
-.submitButton {
 
+.displayWrapper {
+    display:inline;
 }
-
 input {
     border-radius:0;
 }
@@ -10,6 +10,19 @@ input {
     flex-grow:1;
     flex-direction:column;
 
+}
+
+  
+.addSection {
+    position:sticky;
+    top:10px;
+    border-radius: 50%;
+    height:4rem;
+    width:4rem;
+    text-align: center;
+    font-size:2rem;
+    padding:0rem;
+    background-color: var(--subscribe-btn-bg-color);
 }
 
 .divWrapper {
@@ -40,6 +53,63 @@ input {
 }
 
 textarea {
-    background-color: none;
-    width:80%;
+    border:none;
+    background-color: transparent;
+    width:100%;
 }
+
+
+.fieldset {
+    border: 2px gray solid;
+    border-radius:0.5rem;
+    padding:2rem;
+    margin: 1rem 0;
+    font-family: inherit;
+    display: inline;
+}
+select{
+    height: 44px;
+    border: none;
+    overflow: hidden;
+  }
+  select::-moz-focus-inner {
+    border: 0;
+  }
+  select:focus {
+    outline: none;
+  }
+  select option{
+    width: 60px;
+    font-size: 1.2em;
+    padding: 10px 0;
+    text-align: center;
+    margin-right: 20px;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  .remove {
+    display:inline;
+  }
+  .submitButton {
+    width:8rem;
+    height:4rem;
+    border-radius:1rem;
+    background-color: var(--subscribe-btn-bg-color);
+    border:none;
+    font-size:1.25rem;
+    font-weight:900;
+  }
+
+  .sectionOptions {
+    display:inline;
+  }
+  .editWrapper {
+    display:inline;
+  }
+
+  .textarea {
+    overflow-y:auto;
+    min-height: 1rem;
+  }

@@ -36,22 +36,25 @@ const Edit = ({ update, index, value, control }) => {
   });
 
   return (
-    <div>
+    <div className={styles.editWrapper}>
       <Display control={control} index={index} />
 
       <textarea
-        placeholder="enter text"
+        placeholder="enter text" 
+        onInput={(e) => {
+          e.target.style.height = "auto";
+          e.target.style.height = e.target.scrollHeight + "px";
+        }}      
         {...register(`text`, { required: true })}
       />
 
       <div className={styles.sectionOptions}>
-        <select {...register(`marks`)}>
+        <select id={styles.select} {...register(`marks`)}>
           <option value='section'>Section</option>
           <option value='paragraph'>Paragraph</option>
           <option value='list'>List</option>
           <option value='latex'>LaTeX</option>
         </select>
-
       <button
         type="button"
         onClick={handleSubmit((data) => {
@@ -145,13 +148,12 @@ function displayForm() {
 
         return <div className={styles.divWrapper} >
             <form className={styles.formWrapper} onSubmit={handleSubmit(onSubmit)}>
-            <input className={styles.submitButton} type="submit" />
             <textarea defaultValue={post.title} placeholder="Enter title..." className={styles.postTitle} {...register("title")} />
             <textarea defaultValue={post.author} placeholder="Enter author..."  className={styles.postAuthor} {...register("author")} />
             <textarea defaultValue={post.subtitle} placeholder="Enter subtitle..." className={styles.subTitle} {...register("subtitle")} />
         
             {fields.map((field, index) => (
-          <fieldset key={field.id}>
+          <fieldset className={styles.fieldset} key={field.id}>
             <Edit
               control={control}
               update={update}
@@ -169,9 +171,10 @@ function displayForm() {
         ))}
 
         <br />
-
-        <button
+      <div>
+      <button
           type="button"
+          className={styles.addSection}
           onClick={() => {
             append({
               text: "",
@@ -180,8 +183,12 @@ function displayForm() {
             });
           }}
         >
-          append
+          +
         </button>
+        <input className={styles.submitButton} type="submit" />
+
+      </div>
+
         </form>
         </div>
     } else {

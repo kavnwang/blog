@@ -3,7 +3,7 @@ import { useForm, useFieldArray, Controller, useWatch } from "react-hook-form";
 import axios from "axios";
 import {useEffect, useState, useRef} from 'react';
 import TagLink from "./TagLink";
-import styles from '../styles/EditPostText.module.css'
+import styles from '../styles/AddTag.module.css'
 import { v4 as uuidv4 } from 'uuid'; // Import uuidv4 from uuid
 
 const fieldArrayName = 'tags';
@@ -18,7 +18,6 @@ const Display = ({ control, index }) => {
 
   return (
     <div>
-      <h3>Submitted Data</h3>
       <p>
         {data?.text}
       </p>
@@ -32,15 +31,15 @@ const Edit = ({ update, index, value, control }) => {
   });
 
   return (
-    <div>
+    <div className={styles.editSection}>
       <Display control={control} index={index} />
 
-      <textarea
-        placeholder="enter text"
+      <textarea className={styles.tagTextArea}
         {...register(`text`, { required: true })}
       />
       <button
-        type="button"
+        type="button" 
+        className={styles.updateButton}
         onClick={handleSubmit((data) => {
           update(index, data);
         })}
@@ -111,17 +110,33 @@ const AddTag = ({postId}) => {
 function displayForm() {
     if(post) {
       console.log(fields);
-        return <form onSubmit={handleSubmit(onSubmit)}>
+        return <form className={styles.displayWrapper} onSubmit={handleSubmit(onSubmit)}>
+
+          <button
+            type="button"
+            className={styles.append}
+            onClick={() => {
+              append({ text: ''});
+            }}
+          >
+            +
+          </button>
+  
+        <input className={styles.submitTags} type="submit" />
+
+          <div className={styles.formWrapper}>
+            
             {fields.map((field, index) => (
-          <fieldset key={field.id}>
+          <fieldset className={styles.section} key={field.id}>
             <Edit
               control={control}
               update={update}
               index={index}
               value={field}
+              className={styles.edit}
             />
             <button
-              className="remove"
+              className={styles.remove}
               type="button"
               onClick={() => remove(index)}
             >
@@ -130,16 +145,7 @@ function displayForm() {
           </fieldset>
         ))}
 
-          <button
-            type="button"
-            onClick={() => {
-              append({ text: ''});
-            }}
-          >
-            append
-          </button>
-  
-        <input type="submit" />
+</div>
       </form>
   
     } else {
@@ -147,7 +153,7 @@ function displayForm() {
     }
 }    
     return(
-        <div>
+        <div className={styles.displayWrapper}>
             {displayForm()}
         </div>
     );
