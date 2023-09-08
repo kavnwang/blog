@@ -1,0 +1,44 @@
+.section {
+    font-size:1.5rem;
+    color:rgb(0, 135, 212);
+}
+
+.paragraph {
+    font-weight:500;
+    font-size:1rem;
+}
+
+.listItem {
+
+}
+
+.latex {
+    
+}
+
+.title {
+    color:var(--post-title-color);
+    text-align: center;
+    margin-top:2rem;
+    margin-bottom:1rem;
+}
+
+.info {
+    display:flex;
+    justify-content: space-between;
+    border-bottom: 2px solid black;
+}
+
+.subtitle {
+    font-weight:300;
+    font-style: italic;
+    font-size:1rem;
+}
+
+.postWrapper {
+    margin: 0 0%;
+}
+
+.textWrapper {
+
+}
