@@ -7,7 +7,6 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import AddTag from './AddTag';
 import { BLOCKS, MARKS } from '@contentful/rich-text-types';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import PostText from './PostText';
 import styles from '../styles/EditPostText.module.css'
 
 
@@ -87,7 +86,7 @@ const EditPostText = ({postId}) => {
                 .then((res) => {
                     setPost(res.data.post),
                     res.data.post.text.content.forEach((u) => {
-                        fields.push({
+                        append({
                           text: u.value,
                           marks: u.marks.type 
                         });
@@ -108,6 +107,7 @@ const EditPostText = ({postId}) => {
                 content: [],
               };
             data.array.forEach((u) => {
+              console.log(u.marks);
                 let mark = '';
                 if(u.marks == 'section') {
                     mark = 'bold';
@@ -116,10 +116,10 @@ const EditPostText = ({postId}) => {
                     mark = 'italic';
                 }
                 if(u.marks == 'list') {
-                    mark == 'underline';
+                    mark = 'underline';
                 }
                 if(u.marks == 'latex') {
-                    mark == 'code';
+                    mark = 'code';
                 }
                 document.content.push({
                     nodeType: 'text',
@@ -141,6 +141,7 @@ const EditPostText = ({postId}) => {
 function displayForm() {
     if(post) {
 
+      console.log(fields);
 
         return <div className={styles.divWrapper} >
             <form className={styles.formWrapper} onSubmit={handleSubmit(onSubmit)}>

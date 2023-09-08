@@ -2,20 +2,25 @@
     display:flex;
     gap: 50px;
     margin:0;
+    padding:0;
 }
 
 .commentAuthor {
     font-weight:900;
+    margin:0;
 }
 
 .commentDate {
     font-style: italic;
+    margin:0;
 }
 
 .commentText {
-    margin-top:0;
+    margin: 0.5rem 0;
 }
 
 .commentWrapper {
     border-bottom: solid 1px black;
+    margin:1.5rem 0 ;
+    padding:0;
 }

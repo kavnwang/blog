@@ -9,7 +9,11 @@ function AllComments({postId}) {
 
     const [comments, setComments] = useState(null);
     const { register, handleSubmit } = useForm();
+    const [show, setShow] = useState(false);
 
+    const handleComment = () => {
+        setShow(true);
+    }
     useEffect(() => {
         
         try {
@@ -46,10 +50,9 @@ function AllComments({postId}) {
 
     return(
         <div>
-            <h2>Comments</h2>
             <div className={styles.divWrapper}>
-            <h2>Create Comment</h2>
-            <form className={styles.formWrapper} onSubmit={handleSubmit(onSubmit)}>
+            {!show && <button className={styles.commentButton} onClick={handleComment}>Create Comment</button>}
+            {show && <form className={styles.formWrapper} onSubmit={handleSubmit(onSubmit)}>
             <label htmlFor='author'>Author</label>
             <input {...register("author")} />
             <label htmlFor='comment'>Comment</label>
@@ -58,8 +61,8 @@ function AllComments({postId}) {
 
             <input className={styles.submitButton} type="submit" />
         </form>
+}   
         </div>
-        
               {comments && comments.map(comment => <Comment key={comment} commentId={comment} />)} 
         </div>
 

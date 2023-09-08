@@ -5,10 +5,23 @@
 }
 
 .divWrapper {
-    margin-top:7rem;
+    margin-top:3.5rem;
+    border-top: 2px solid black;
+    padding-top:1.5rem;
 }
 .commentInput {
     height:5rem;
+    width:100%;
+}
+
+.commentButton {
+    width:8rem;
+    background-color: var(--subscribe-btn-bg-color);
+    border:none;
+    height:2rem;
+    font-size:0.75rem;
+    font-weight:800;
+    border-radius: 0.5rem;
 }
 
 .formInput {

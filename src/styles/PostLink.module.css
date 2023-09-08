@@ -2,13 +2,13 @@
     display:flex;
     flex-direction: column;
     background-color:var(--post-bg-color);
-    border-bottom: 1.2px solid var(--post-divider-color);
+    border-bottom: 2px solid var(--post-divider-color);
     margin:1rem 0;
     padding:0.5rem 0;
 }
 
 .postTitleContainer {
-    margin:0.5rem 0;
+    margin-bottom:0.5rem;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -18,7 +18,8 @@
 .postTitle {
     margin:0px;
     text-decoration:none;
-    font-weight:800;
+    font-size:1.2rem;
+    font-weight:600;
 }
 .postDescription {
     width:100%;
@@ -27,23 +28,23 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
-    font-size:0.6rem;
+    font-size:0.8rem;
     margin:0;
 }
 
 .postDate {
-    margin:0;
+    margin-bottom:0;
     padding:0;
     flex: 0 0 auto;
-    font-size:0.75rem;
+    font-size:0.8rem;
     height:1rem;
     padding-right:0.5rem;
-    border-right: 1px solid var(--post-divider-color);
+    border-right: 2px solid var(--post-divider-color);
 }
 
 .tagsBar {
     display:flex;
-    gap: 0.5rem;
+    gap: 0.8rem;
 }
 
 .postTitleContainer .tagsBar {
@@ -52,5 +53,5 @@
     padding:0;
     margin:0;
     flex:1 1 0;
-    font-size:0.5rem;
+    font-size:0.8rem;
 }

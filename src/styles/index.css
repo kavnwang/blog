@@ -1,15 +1,14 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Inter var,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
   line-height: 1.5;
   font-weight: 400;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
   max-width:100vw;
-  padding:1rem 7rem;
+  padding:1rem 20%;
 }
 
 :root {
@@ -26,9 +25,9 @@
   --tag-bg-color:#ffcbff;
   --post-text-color:#bfdbff;
   --post-divider-color: hsl(300, 100%, 90%,80%);
-  --subscribe-btn-text-color:#fff6ff;
-  --subscribe-btn-bg-color:#e96900;
-
+  --subscribe-btn-text-color:#491500;
+  --subscribe-btn-bg-color:#ff7a63;
+  --post-title-color:#491500;
 }
 
 

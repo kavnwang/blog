@@ -5,7 +5,14 @@ import Post from './Post';
 import { Link } from "react-router-dom";
 import styles from '../styles/PostLink.module.css';
 import TagLink from './TagLink';
+import { DateTime } from 'luxon';
 
+function formatDate(date) {
+    const luxonDate = DateTime.fromJSDate(date);
+    return luxonDate.toFormat('MMMM d, yyyy');
+  }
+
+  
 const PostLink =  ({postId}) => {
     const [post, setPost] = useState(null);
 
@@ -29,7 +36,7 @@ const PostLink =  ({postId}) => {
                 {post && post.title}
              </Link>
         <div className={styles.postTitleContainer}>
-            <span className={styles.postDate}>{post && new Date(post.date).toLocaleDateString()}</span>
+            <span className={styles.postDate}>{post && formatDate(new Date(post.date))}</span>
             <div className={styles.tagsBar}>                    
                 {post && post.tags.map((tag) => <TagLink key={tag} tagId={tag}/> )}
             </div>

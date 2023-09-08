@@ -20,7 +20,6 @@ function CreateCommentForm({postId}) {
 
     return(
         <div className={styles.divWrapper}>
-            <h2>Create Comment</h2>
             <form className={styles.formWrapper} onSubmit={handleSubmit(onSubmit)}>
             <label htmlFor='author'>Author</label>
             <input {...register("author")} />
