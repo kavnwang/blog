@@ -1,3 +1,10 @@
+
+
+:root {
+  font-size: 16px; /* Set your base font size here, e.g., 16px */
+  /* ... other CSS properties ... */
+}
+
 :root {
   font-family: Inter var,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
   line-height: 1.5;
@@ -7,7 +14,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
-  max-width:100vw;
+  font-size: 16px;
   padding:1rem 20%;
 }
 
@@ -19,7 +26,6 @@
   --footer-text-color:#330000;
   --latest-post-text-color:#000000;
   --posts-btn-text-color:rgb(255, 169, 183);
-  font-size:1.5vw;
   --tag-text-color: #ff3bff;
   --tag-text-color-hover:#ff00ff;
   --tag-bg-color:#ffcbff;
@@ -27,7 +33,25 @@
   --post-divider-color: hsl(300, 100%, 90%,80%);
   --subscribe-btn-text-color:#491500;
   --subscribe-btn-bg-color:#ff7a63;
-  --post-title-color:#491500;
+  --post-title-color:#680049;
+  --nav-font-size:1rem;
+  --subscribe-section-size:1rem;
+  --hero-section-size:1rem;
+}
+
+
+@media screen and (max-width: 800px) {
+  :root {
+    padding: 1rem max(5%,calc(50% - 240px));
+    --nav-font-size: max(2vw, 0.75rem);
+  }
+}
+
+@media screen and (max-width: 500px) and (min-width: 300px) {
+  :root {
+    --subscribe-section-size: 3.2vw;
+    --hero-section-size: 3.2vw;
+  }
 }
 
 

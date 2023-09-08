@@ -5,12 +5,15 @@
     align-items: center;
 }
 
+.formTitle {
+    font-size:calc(1.5 * var(--subscribe-section-size))
+}
 .inputForm {
-    height:2.5rem;
+    height:calc(2.5 * var(--subscribe-section-size));
     color:black;
     font-family:inherit;
-    padding: 0 0.5rem;
-    font-size: 1rem;
+    padding: 0 calc(0.5 * var(--subscribe-section-size));
+    font-size: calc(1 * var(--subscribe-section-size));
 }
 
 .inputForm::placeholder {
@@ -19,11 +22,11 @@
 
 
 .submitButton {
-    height:2.5rem;
-    width:7.5rem;
-    font-size:0.8rem;
+    height:calc(2.5 * var(--subscribe-section-size));
+    width:calc(7.5 * var(--subscribe-section-size));
+    font-size:calc(0.8 * var(--subscribe-section-size));
     font-weight:900;
-    border-radius:0.75rem;
+    border-radius:calc(0.75 * var(--subscribe-section-size));
     text-align:center;
     border:none;
     background-color:var(--subscribe-btn-bg-color);
@@ -34,5 +37,11 @@
 .formContent {
     display:flex;
     justify-content: center;
-    gap:3rem;
+    gap:calc(3 * var(--subscribe-section-size));
 }
+
+@media screen and (max-width: 300px) {
+    .formWrapper {
+        display: none;
+    }
+  }

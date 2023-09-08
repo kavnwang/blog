@@ -57,15 +57,14 @@ const Posts = () => {
     return(
         <div className={styles.formBar}>
             <Nav />
+            <form onSubmit={handleSubmit(onSubmit)} >
+            <p className={styles.results}>Showing <input placeholder="all" className={styles.inputNum} {...register("number")} /> results</p>
+            </form>
             <div className={styles.buttonBar}>
-            <h2 className={styles.searchText}>Search by:</h2>
             <button className={`${styles.button} ${select == "recent" ? styles.selected : ""}`} onClick={setRecent}>Recent</button>
             <button className={`${styles.button} ${select == "popular" ? styles.selected: ""}`} onClick={setPopular}>Popular</button>
             <button className={`${styles.button} ${select == "tag" ? styles.selected : ""}`} onClick={setTag}>Tag</button>
             </div>
-            <form onSubmit={handleSubmit(onSubmit)} >
-            <p className={styles.results}>Showing <input placeholder="all" className={styles.inputNum} {...register("number")} /> results</p>
-            </form>
               {displayPosts()}
         </div>
 

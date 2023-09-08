@@ -10,6 +10,7 @@ function TagLink({tagId}) {
     useEffect(() => {
         try {
             const tagURL = `${import.meta.env.VITE_API_URL}/tags/${tagId}`;
+            console.log(tagURL);
             axios
                 .get(tagURL)
                 .then((res) => {
@@ -22,7 +23,7 @@ function TagLink({tagId}) {
 
     return(
         <div>
-            <Link className={styles.tag} to={`/tags/${tagId}`}>{tag && tag.name}</Link>
+            <Link className={styles.tag} to={`/tags/${tagId}`}>{tag && tag.name.toUpperCase()}</Link>
         </div>
 
     );

@@ -3,17 +3,17 @@
     position:relative;
     display:flex;
     flex-direction: row;
-    padding: 2rem 0rem;
+    padding: calc(2 * var(--hero-section-size)) 0rem;
     color:var(--hero-text-color);
     align-items: center;
     justify-content: space-between;
   }
   
   .heroLeft {
-    padding-top:3rem;
+    padding-top:calc(3 * var(--hero-section-size));
   }
   .heroText {
-    font-size:min(5vw,6rem);
+    font-size: calc(3 * var(--hero-section-size));
     margin:0px;
     padding:0px;
     line-height:0;
@@ -21,18 +21,18 @@
   }
   
   .chineseName {
-    font-size:1.5rem;
+    font-size:calc(1.5 * var(--hero-section-size));
     margin:0px;
-    padding-top:1.5em;
+    padding-top:calc(1.5 * var(--hero-section-size));
     padding-bottom:0rem;
-    text-indent:0.25em;
+    text-indent:calc(0.25 * var(--hero-section-size));
   }
   
   .heroRight {
 
   }
   .heroImage {
-    width:8rem;
+    width:calc(8 * var(--hero-section-size));
     border-radius: 50%;
 
     height:auto;

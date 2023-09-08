@@ -28,7 +28,7 @@ const SubscribeForm = () => {
     function displayForm() {
         if(display) {
             return <div className={styles.formWrapper}>
-            <h2>Subscribe Form</h2>
+            <h2 className={styles.formTitle}>Subscribe Form</h2>
             <form className={styles.formContent} onSubmit={handleSubmit(onSubmit)}>
                 <input className={styles.inputForm} placeholder="Enter email address..."{...register("email")}/>
                 <input className={styles.submitButton} type="submit" />

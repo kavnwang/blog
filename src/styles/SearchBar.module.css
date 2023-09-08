@@ -1,8 +1,14 @@
 .search {
     height:1rem;
-    border-radius:1rem;
+    border-radius:0.5rem;
     border: none;
     outline:none;
     width:6rem;
+    padding:0.5rem;
 }
 
+@media screen and (max-width: 400px) {
+    .search {
+        display:none;
+    }
+}
