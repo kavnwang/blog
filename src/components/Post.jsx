@@ -2,7 +2,6 @@ import React from 'react'
 import { useEffect, useState} from 'react';
 import {Link, useParams } from 'react-router-dom';
 import axios from 'axios';
-import CreateCommentForm from './CreateCommentForm.jsx';
 import AllComments from './AllComments.jsx';
 import Nav from './Nav'
 import { BLOCKS, MARKS } from '@contentful/rich-text-types';

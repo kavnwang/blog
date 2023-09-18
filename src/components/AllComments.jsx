@@ -2,7 +2,7 @@ import React from 'react'
 import axios from "axios";
 import { useEffect, useState} from 'react';
 import Comment from './Comment';
-import styles from '../styles/CreateCommentForm.module.css';
+import styles from '../styles/AllComments.module.css';
 import { useForm } from "react-hook-form";
 
 function AllComments({postId}) {
@@ -12,7 +12,7 @@ function AllComments({postId}) {
     const [show, setShow] = useState(false);
 
     const handleComment = () => {
-        setShow(true);
+        setShow(!show);
     }
     useEffect(() => {
         
@@ -20,7 +20,7 @@ function AllComments({postId}) {
             axios 
                 .get(`${import.meta.env.VITE_API_URL}/posts/${postId}/comments`)
                 .then((res) => {
-                    console.log(res);
+                    console.log(res.data.comments.comments);
                     setComments(res.data.comments.comments);
                 })
         } catch (error) {
@@ -35,14 +35,12 @@ function AllComments({postId}) {
       const onSubmit = async(data, e) => {
           try {
               axios 
-                  .post(`${import.meta.env.VITE_API_URL}/posts/${postId}/comments/create`, {author: data.author, comment: data.comment, postId: postId})
-                  .then(
-                    axios.get(`${import.meta.env.VITE_API_URL}/posts/${postId}/comments`)
+                  .post(`${import.meta.env.VITE_API_URL}/posts/${postId}/comments/create`, {...data, postId: postId})
                   .then((res) => {
                       console.log(res);
-                      setComments(res.data.comments.comments);
-                  })
-  );
+                      setComments(res.data.comments);
+                      handleComment();
+                  });
           } catch (error) {
               
           }
