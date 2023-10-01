@@ -5,6 +5,7 @@ import PublishedPosts from './PublishedPosts';
 import UnpublishedPosts from './UnpublishedPosts';
 import CreatePostButton from './CreatePostButton';
 import Nav from './Nav';
+import PhotoForm from './PhotoForm';
 
 const Dashboard = () => {
     return(
@@ -14,7 +15,7 @@ const Dashboard = () => {
             <PublishedPosts />
             <UnpublishedPosts />
             <AllTags />
-
+            <PhotoForm />
             <CreateTagForm />
 
         </div>

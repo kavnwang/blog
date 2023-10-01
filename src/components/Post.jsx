@@ -53,7 +53,6 @@ useEffect(() => {
 
     function displayPost() {
         if(post) {
-            console.log(post.text);
             return <div>
             <Nav />
             <div className={styles.postWrapper}>

@@ -37,7 +37,6 @@ function AllComments({postId}) {
               axios 
                   .post(`${import.meta.env.VITE_API_URL}/posts/${postId}/comments/create`, {...data, postId: postId})
                   .then((res) => {
-                      console.log(res);
                       setComments(res.data.comments);
                       handleComment();
                   });

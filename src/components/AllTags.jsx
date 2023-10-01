@@ -15,7 +15,6 @@ const AllTags = () => {
                 .get(`${import.meta.env.VITE_API_URL}/tags/view`)
                 .then((res) => {
                     setTags(res.data.tags)
-                    console.log(res.data.tags);
         });
         } catch (error) {
             

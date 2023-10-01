@@ -21,7 +21,6 @@ const PublishedPosts = () => {
       
       },[])
 
-      console.log(posts);
     return(
         <div>
             <h2>Published Posts</h2>

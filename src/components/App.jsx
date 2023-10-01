@@ -13,7 +13,6 @@ function App() {
       <Nav />
       <Hero />
 <div className={styles.recentWrapper}>
-<Current className={styles.current} />
 </div>
 <RecentPosts num={3} />
 <SubscribeForm />
@@ -23,3 +22,7 @@ function App() {
 }
 
 export default App;
+
+/*
+<Current className={styles.current} />
+*/

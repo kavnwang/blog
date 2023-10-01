@@ -11,7 +11,6 @@ function PublishPostButton(props) {
             axios 
                 .post(`${import.meta.env.VITE_API_URL}/posts/update/${props.postId}`,{publish: !props.published})
                 .then(
-                    (res) => {console.log(res)},
                     props.handleState(!props.published),
                     this.forceUpdate()
                 );

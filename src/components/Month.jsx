@@ -11,7 +11,6 @@ const Month = ({num}) => {
         
         try {
             const postURL = num ? `${import.meta.env.VITE_API_URL}/posts/recent/${num}` : `${import.meta.env.VITE_API_URL}/posts/recent/`;
-            console.log(postURL);
             axios 
                 .get(postURL)
                 .then((res) => {

@@ -130,9 +130,7 @@ const EditPostText = ({postId}) => {
                     marks: [{type: mark}]
                 });
             });
-            
-            console.log(document);
-              
+                          
             axios 
                 .post(`${import.meta.env.VITE_API_URL}/posts/update/${postId}`, {...data, text: document})
                 .then((res) => {console.log(res)});

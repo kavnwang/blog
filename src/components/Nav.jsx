@@ -15,9 +15,7 @@ const Nav = () => {
     <ul className={styles.navRight}>
         
         <li className={styles.navLink}><Link to={`/posts/`}>Posts</Link> </li>
-        <li className={styles.navLink}><Link to={`/about/`}>About</Link></li>
         <li className={styles.navLink}><Link to={`/photos/`}>Photos</Link></li>
-        <li className={styles.navLink}><SearchBar /></li>
     </ul>
 
     </nav>
@@ -26,3 +24,8 @@ const Nav = () => {
 }
 
 export default Nav;
+
+/*
+    <li className={styles.navLink}><Link to={`/about/`}>About</Link></li> 
+    <li className={styles.navLink}><SearchBar /></li>
+*/

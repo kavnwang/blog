@@ -17,7 +17,6 @@ const SubscribeForm = () => {
                 },
                 )
                 .then(setDisplay(false))
-                .then((res) => {console.log(res)});
         } catch (error) {
             
         }

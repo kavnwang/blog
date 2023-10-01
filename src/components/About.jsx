@@ -16,7 +16,7 @@ const About = () => {
                 <li>Make cleaner UI, dashboard UI</li>
                 <li>Login / auth</li>
                 <li>Reading time for posts</li>
-                <li>Being able to edit comments as owner of blog</li>
+                <li>Being able to edit and delete comments as owner of blog</li>
                 <li>Deleting/editing tags </li>
                 <li>Clean up project file organization</li>
                 <li>Better mobile experience</li>

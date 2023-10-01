@@ -12,7 +12,6 @@ const RecentPosts = ({num}) => {
         
         try {
             const postURL = (num > 0) ? `${import.meta.env.VITE_API_URL}/posts/recent/${num}` : `${import.meta.env.VITE_API_URL}/posts/recent/`;
-            console.log(postURL);
             axios 
                 .get(postURL)
                 .then((res) => {
