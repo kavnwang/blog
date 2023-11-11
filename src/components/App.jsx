@@ -13,6 +13,7 @@ function App() {
       <Nav />
       <Hero />
 <div className={styles.recentWrapper}>
+  <Current />
 </div>
 <RecentPosts num={3} />
 <SubscribeForm />

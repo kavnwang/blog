@@ -4,10 +4,7 @@ const Current = () => {
 
     return(
         <div>
-            <ul>
-                <li>Working on this blog!</li>
-                <li>Other status updates go here once I add api feature</li>
-            </ul>
+            <p>I created a substack at <a href="https://wangk.substack.com/">wangk.substack.com</a> where you can view my writing without server delays and with a subscription feature while I revamp this website. Enjoy! </p>
         </div>
 
     );
